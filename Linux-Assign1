@@ -1,0 +1,13 @@
+ananth@ananth-VirtualBox:~/Assignment$ cat asign1.txt
+A quick brown fox jumped over the lazy dog. Over the lazy dog was a quick brown fox. A white fox over the lazy dog. A black fox over the brown fox.
+ananth@ananth-VirtualBox:~/Assignment$ grep -o -w '\w\+' asign1.txt | sort | uniq -cd > asign3.txt
+ananth@ananth-VirtualBox:~/Assignment$ cat asign3.txt
+           2 a
+           2 A
+           3 brown
+           3 dog
+           5 fox
+           3 lazy
+           3 over
+           2 quick
+           4 the
