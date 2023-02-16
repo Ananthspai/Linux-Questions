@@ -11,3 +11,11 @@ ananth@ananth-VirtualBox:~/Assignment$ cat asign3.txt
            3 over
            2 quick
            4 the
+grep is used to search for all the words.
+The -o command prints only the words that are matched.
+The -w option matches only whole words.
+The regular expression \w\+ matches word characters
+The sort command sorts the output
+uniq -cd command removes duplicates from the sorted list and counts the number of occurances of each unique word.
+The -c option tells uniq to output count, and 
+The -d option tells it to only show lines that appear more than once.
