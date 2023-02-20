@@ -1,0 +1,66 @@
+Linux command to Swap the column (3<=> 2) of a file
+ananth@ananth-VirtualBox:~/Assignment$ cat AsignFile2.txt 
+2 a nandan chess
+2 A Raj cricket
+3 brown abhinay football
+3 dog suresh cricket
+5 fox asif cricket
+3 lazy ramesh badminton
+3 over ayush chess 
+2 quick abhijeet football
+4 the ananth badminton
+ananth@ananth-VirtualBox:~/Assignment$ awk '{temp=$2;$2=$3;$3=temp;print}' AsignFile1.txt>AsignFile2.txt
+ananth@ananth-VirtualBox:~/Assignment$ cat AsignFile2.txt
+2 nandan a chess
+2 Raj A Cricket
+3 abhinay brown football
+3 suresh dog cricket
+5 asif fox cricket
+3 ramesh lazy badminton
+3 ayush over chess 
+2 abhijeet quick football
+4 ananth the badminton
+
+After swapping if it has duplicated rows, then remove it
+ananth@ananth-VirtualBox:~/Assignment$ sort -u AsignFile2.txt>AsignFile3.txt
+ananth@ananth-VirtualBox:~/Assignment$ cat AsignFile3.txt
+2 abhijeet quick football
+2 nandan a chess
+2 Raj A Cricket
+3 abhinay brown football
+3 ayush over chess
+3 ramesh lazy badminton
+3 suresh dog cricket
+4 ananth the badminton
+5 asif fox cricket
+
+Place the counts of line before and after conversion in the footer of output file
+ananth@ananth-VirtualBox:~/Assignment$ echo "Before: $(wc -l < AsignFile1.txt)" >> AsignFile3.txt
+ananth@ananth-VirtualBox:~/Assignment$ echo "After: $(wc -l < AsignFile2.txt)" >> AsignFile3.txt
+ananth@ananth-VirtualBox:~/Assignment$ cat AsignFile3.txt
+2 abhijeet quick football
+2 nandan a chess
+2 Raj A Cricket
+3 abhinay brown football
+3 ayush over chess
+3 ramesh lazy badminton
+3 suresh dog cricket
+4 ananth the badminton
+5 asif fox cricket
+Before: 9
+After: 9
+
+Save it in a new file Demo2.txt
+ananth@ananth-VirtualBox:~/Assignment$ cp AsignFile3.txt Demo2.txt
+ananth@ananth-VirtualBox:~/Assignment$ cat Demo2.txt
+2 abhijeet quick football
+2 nandan a chess
+2 Raj A Cricket
+3 abhinay brown football
+3 ayush over chess
+3 ramesh lazy badminton
+3 suresh dog cricket
+4 ananth the badminton
+5 asif fox cricket
+Before: 9
+After: 9
